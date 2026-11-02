@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps Pipeline Success Indicator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>DevOps Pipeline Success Indicator</h1>
+      <p>Monitor Build, Test and Deployment Pipeline Health</p>
+    </div>
+    <button id="runBtn" class="primary">▶ Run New Pipeline</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h2>Pipeline Monitoring Dashboard</h2>
+        <p>Track CI/CD execution and identify successful or failed stages.</p>
+      </div>
+      <div class="status-pill"><span></span> System Ready</div>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <div class="label">Total Pipelines</div>
+        <div class="value" id="total">0</div>
+        <div class="small">Executions recorded</div>
+      </div>
+      <div class="card">
+        <div class="label">Successful</div>
+        <div class="value success" id="successful">0</div>
+        <div class="small">All stages passed</div>
+      </div>
+      <div class="card">
+        <div class="label">Failed</div>
+        <div class="value danger" id="failed">0</div>
+        <div class="small">Needs attention</div>
+      </div>
+      <div class="card highlight">
+        <div class="label">Success Indicator</div>
+        <div class="value" id="rate">0%</div>
+        <div class="small" id="rateText">No runs yet</div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <div class="panel-title">
+          <h3>Current Pipeline</h3>
+          <span id="pipelineStatus" class="badge idle">IDLE</span>
+        </div>
+        <div class="pipeline">
+          <div class="stage" id="build">
+            <div class="stage-icon">⚙</div>
+            <strong>Build</strong>
+            <span>Compile & package</span>
+          </div>
+          <div class="arrow">→</div>
+          <div class="stage" id="test">
+            <div class="stage-icon">✓</div>
+            <strong>Test</strong>
+            <span>Run automated tests</span>
+          </div>
+          <div class="arrow">→</div>
+          <div class="stage" id="deploy">
+            <div class="stage-icon">🚀</div>
+            <strong>Deploy</strong>
+            <span>Release application</span>
+          </div>
+        </div>
+        <div id="message" class="message">Click “Run New Pipeline” to start a demo execution.</div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">
+          <h3>Success Indicator</h3>
+          <span class="legend">Based on completed runs</span>
+        </div>
+        <div class="gauge-wrap">
+          <div class="gauge" id="gauge">
+            <div class="gauge-inner">
+              <strong id="gaugeRate">0%</strong>
+              <span>Success Rate</span>
+            </div>
+          </div>
+        </div>
+        <div class="formula">
+          Success Rate = Successful Pipelines ÷ Total Pipelines × 100
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h3>Pipeline Execution History</h3>
+        <button id="resetBtn" class="secondary">Reset Demo Data</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Pipeline</th>
+              <th>Build</th>
+              <th>Test</th>
+              <th>Deploy</th>
+              <th>Result</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody id="history"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="how">
+      <h3>How the System Works</h3>
+      <div class="steps">
+        <div><b>1</b><span>Start Pipeline</span></div>
+        <div><b>2</b><span>Build Stage</span></div>
+        <div><b>3</b><span>Automated Test</span></div>
+        <div><b>4</b><span>Deployment</span></div>
+        <div><b>5</b><span>Calculate Success Indicator</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>DevOps Pipeline Success Indicator • Project Expo Prototype • 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
